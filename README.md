@@ -46,7 +46,6 @@
 │   └── mybull-qrcode.png                 # 正式域名二维码
 ├── scripts/
 │   └── serve.py                          # 本地静态服务
-├── 今日你的牛｜6类九宫格图片命名整理.md # 素材位置与牛名对照
 └── overview.md                            # 项目实现概览
 ```
 
@@ -109,4 +108,3 @@ python3 scripts/serve.py
 - 确保 `images/`、`css/` 和 `js/` 目录可公开访问。
 - 为 PNG、CSS 和 JavaScript 资源配置浏览器缓存。
 - 版本更新时同步调整 `index.html` 中的资源版本参数。
-
