@@ -534,7 +534,7 @@ const BULLS = [
  */
 const BULL_IMAGE_GRIDS = {
   money: {
-    src: 'images/01_money_bulls_grid.png',
+    src: 'images/01_money_bulls_grid.webp',
     ids: [
       'huangjin', 'baofu', 'zhongjiang',
       'zhangting', 'touzi', 'gaoqian',
@@ -542,7 +542,7 @@ const BULL_IMAGE_GRIDS = {
     ],
   },
   work: {
-    src: 'images/02_work_bulls_grid.png',
+    src: 'images/02_work_bulls_grid.webp',
     ids: [
       'niuwang', 'juanwang', 'chuchai',
       'xiaban', 'dagong', 'moyu',
@@ -550,7 +550,7 @@ const BULL_IMAGE_GRIDS = {
     ],
   },
   study: {
-    src: 'images/03_study_bulls_grid.png',
+    src: 'images/03_study_bulls_grid.webp',
     ids: [
       'shang_an', 'boshi', 'xueba',
       'zilv', 'jiwa', 'kaoyan',
@@ -558,7 +558,7 @@ const BULL_IMAGE_GRIDS = {
     ],
   },
   mood: {
-    src: 'images/04_emotion_bulls_grid.png',
+    src: 'images/04_emotion_bulls_grid.webp',
     ids: [
       'tianxuan', 'zhonger', 'fafeng',
       'kaixin', 'shihuai', 'huaijiu',
@@ -566,7 +566,7 @@ const BULL_IMAGE_GRIDS = {
     ],
   },
   social: {
-    src: 'images/05_social_bulls_grid.png',
+    src: 'images/05_social_bulls_grid.webp',
     ids: [
       'sheniu', 'lianai', 'gewang',
       'anlian', 'shekong', 'chigua',
@@ -574,7 +574,7 @@ const BULL_IMAGE_GRIDS = {
     ],
   },
   tech: {
-    src: 'images/06_tech_bulls_grid.png',
+    src: 'images/06_tech_bulls_grid.webp',
     ids: [
       'yuzhou', 'saibo_shenniu', 'agent',
       'ainiu', 'saibo', 'jike',

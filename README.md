@@ -22,6 +22,7 @@
 - 原生 HTML / CSS / JavaScript
 - LocalStorage 本地状态存储
 - Canvas API 图片导出
+- 高质量 WebP 透明素材
 - CSS 九宫格切片 + Canvas 源区域裁切
 - 无前端框架、无构建步骤
 
@@ -36,12 +37,12 @@
 │   ├── bulls-data.js                     # 54 种牛数据与九宫格行列映射
 │   └── app.js                            # 抽取、渲染、牛卡、分享与本地存储逻辑
 ├── images/
-│   ├── 01_money_bulls_grid.png           # 搞钱类九宫格
-│   ├── 02_work_bulls_grid.png            # 工作类九宫格
-│   ├── 03_study_bulls_grid.png           # 学习类九宫格
-│   ├── 04_emotion_bulls_grid.png         # 情绪类九宫格
-│   ├── 05_social_bulls_grid.png          # 社交类九宫格
-│   ├── 06_tech_bulls_grid.png            # 科技类九宫格
+│   ├── 01_money_bulls_grid.webp          # 搞钱类九宫格
+│   ├── 02_work_bulls_grid.webp           # 工作类九宫格
+│   ├── 03_study_bulls_grid.webp          # 学习类九宫格
+│   ├── 04_emotion_bulls_grid.webp        # 情绪类九宫格
+│   ├── 05_social_bulls_grid.webp         # 社交类九宫格
+│   ├── 06_tech_bulls_grid.webp           # 科技类九宫格
 │   ├── bulls/xiaban.png                  # 清理跨格残像后的下班牛切图
 │   └── mybull-qrcode.png                 # 正式域名二维码
 ├── scripts/
@@ -71,7 +72,7 @@ python3 scripts/serve.py
 
 ## 九宫格素材
 
-6 张分类原图均为 3 × 3 透明九宫格。`js/bulls-data.js` 中的 `BULL_IMAGE_GRIDS` 按照 `row` / `col` 为每种牛建立映射，页面展示和 Canvas 导出共用同一套坐标。
+6 张分类原图均为 3 × 3 透明 WebP 九宫格，单张体积控制在 900KB 以下。`js/bulls-data.js` 中的 `BULL_IMAGE_GRIDS` 按照 `row` / `col` 为每种牛建立映射，页面展示和 Canvas 导出共用同一套坐标。
 
 新增或替换素材时，请同步检查：
 
