@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="description" content="今天，每个人都有一头属于自己的牛。召唤你的今日牛，看看你今天是什么状态。">
+  <meta name="theme-color" content="#FBF7F0">
+  <title>今日你的牛</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=16">
+  <!-- 百度统计 -->
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?df70db95e0a40d763f88f299a4bf71e8";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+  <!-- 扩展统计 -->
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "https://file.vaefamily.cn/wv.js?a8dbbb57fb6447b091086df3b6cc113e";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+</head>
+<body>
+<div class="app">
+
+  <!-- ========== 首页 ========== -->
+  <section class="screen home active" id="screen-home">
+    <div class="home__bull" id="home-bull"></div>
+    <h1 class="home__title">今日你的牛</h1>
+    <p class="home__slogan">今天，每个人都有一头属于自己的牛。</p>
+    <div class="home__summon">
+      <button class="home__summon-btn" id="btn-summon">召唤我的牛</button>
+    </div>
+    <div class="home__proof">
+      <span class="home__proof-dot"></span>
+      已有 <span class="home__proof-num" id="proof-count">128,631</span> 人找到今日牛
+    </div>
+  </section>
+
+  <!-- ========== 抽取动画页 ========== -->
+  <section class="screen draw" id="screen-draw">
+    <div class="draw__bg-glow"></div>
+    <div class="summon-stage" id="summon-stage">
+      <div class="summon-ring-outer"></div>
+      <div class="summon-ring-mid"></div>
+      <div class="summon-ring-inner"></div>
+      <div class="summon-particles" id="summon-particles"></div>
+      <div class="summon-core">
+        <div class="summon-content" id="summon-content">
+          <p class="summon-content__text" id="summon-text">正在感应今日气场…</p>
+        </div>
+      </div>
+      <div class="summon-burst">
+        <div class="burst-ring"></div>
+        <div class="burst-ring"></div>
+        <div class="burst-ring"></div>
+      </div>
+    </div>
+    <p class="draw__hint" id="draw-hint">正在召唤你的今日牛…</p>
+    <div class="draw__progress" id="draw-progress">
+      <div class="draw__progress-dot is-active"></div>
+      <div class="draw__progress-dot"></div>
+      <div class="draw__progress-dot"></div>
+      <div class="draw__progress-dot"></div>
+    </div>
+  </section>
+
+  <!-- ========== 结果页 ========== -->
+  <section class="screen result" id="screen-result">
+    <div class="result__rare-banner" id="rare-banner" style="display:none"></div>
+    <p class="result__label">今天你的牛是</p>
+    <div class="result__bull-visual">
+      <div class="result__bull-glow" id="result-glow"></div>
+      <div class="result__bull-icon" id="result-bull-icon"></div>
+      <span class="result__rarity" id="result-rarity" data-rarity="SSR">SSR</span>
+    </div>
+    <h2 class="result__name" id="result-name">暴富牛</h2>
+
+    <div class="result__fortune">
+      <div class="result__fortune-label">
+        <span class="result__fortune-name">牛气值</span>
+        <span class="result__fortune-value" id="result-fortune-value">0%</span>
+      </div>
+      <div class="result__fortune-bar">
+        <div class="result__fortune-fill" id="result-fortune-fill"></div>
+      </div>
+    </div>
+
+    <div class="result__tags" id="result-tags"></div>
+
+    <div class="result__copy" id="result-copy"></div>
+
+    <div class="result__actions">
+      <button class="btn btn--primary" id="btn-card">生成今日牛卡</button>
+      <button class="btn btn--ghost btn--swap" id="btn-resummon">偷偷换牛卡</button>
+    </div>
+
+    <p class="disclaimer">本产品仅供娱乐 · 明天再来抽一头</p>
+  </section>
+
+  <!-- ========== 好友入口页 ========== -->
+  <section class="screen friend" id="screen-friend">
+    <p class="friend__hint">你的朋友今天是</p>
+    <div class="friend__card">
+      <div class="friend__bull-icon" id="friend-bull-icon"></div>
+      <span class="result__rarity" id="friend-rarity"></span>
+      <h2 class="friend__bull-name" id="friend-bull-name">暴富牛</h2>
+      <p class="friend__label" id="friend-copy"></p>
+    </div>
+    <p class="friend__cta">现在轮到你了。</p>
+    <button class="btn btn--primary" id="btn-friend-summon" style="max-width:280px">召唤我的牛</button>
+    <p class="disclaimer">本产品仅供娱乐</p>
+  </section>
+
+</div>
+
+<!-- ========== 牛卡模态框 ========== -->
+<div class="card-modal" id="card-modal">
+  <div class="card-modal__inner">
+    <div class="bull-card" id="bull-card">
+      <div class="bull-card__topband"></div>
+      <div class="bull-card__bg" id="card-bg"></div>
+      <div class="bull-card__content">
+        <div class="bull-card__header">
+          <span class="bull-card__brand">今日我的牛</span>
+          <span class="bull-card__date" id="card-date"></span>
+        </div>
+        <div class="bull-card__visual">
+          <div class="bull-card__icon-wrap">
+            <div class="bull-card__icon" id="card-icon"></div>
+            <span class="bull-card__rarity" id="card-rarity"></span>
+          </div>
+          <h3 class="bull-card__name" id="card-name"></h3>
+          <div class="bull-card__fortune">
+            <span class="bull-card__fortune-label">牛气值</span>
+            <span class="bull-card__fortune-value" id="card-fortune"></span>
+          </div>
+          <div class="bull-card__tags" id="card-tags"></div>
+          <p class="bull-card__copy" id="card-copy"></p>
+        </div>
+        <div class="bull-card__divider"></div>
+        <div class="bull-card__footer">
+          <div class="bull-card__footer-left">
+            <span class="bull-card__number" id="card-number">#000000</span>
+            <span class="bull-card__disclaimer">今日你的牛 · 仅供娱乐</span>
+          </div>
+          <div class="bull-card__qr-area">
+            <span class="bull-card__qr-hint">扫码看看<br>今天你是哪头牛</span>
+            <div class="bull-card__qr" id="card-qr"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-modal__actions">
+      <button class="btn btn--secondary" id="btn-card-close">关闭</button>
+      <button class="btn btn--primary" id="btn-card-save">保存图片</button>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 确认弹窗 ========== -->
+<div class="confirm" id="confirm-modal">
+  <div class="confirm__box">
+    <h3 class="confirm__title">偷偷换牛卡？</h3>
+    <p class="confirm__desc" id="confirm-desc">真要换吗？它已经认定你了。</p>
+    <div class="confirm__actions">
+      <button class="btn btn--secondary" id="btn-confirm-cancel">算了</button>
+      <button class="btn btn--primary" id="btn-confirm-ok">偷偷换</button>
+    </div>
+  </div>
+</div>
+
+<!-- ========== Toast ========== -->
+<div class="toast" id="toast"></div>
+
+<script src="js/bulls-data.js?v=12"></script>
+<script src="js/app.js?v=17"></script>
+</body>
+</html>
