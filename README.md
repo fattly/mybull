@@ -30,7 +30,7 @@
 
 ```text
 .
-├── index.html                              # 页面结构、统计代码和资源入口
+├── index.html                              # 页面结构和资源入口
 ├── css/
 │   └── style.css                          # 设计系统、动画和响应式样式
 ├── js/
@@ -45,14 +45,13 @@
 │   ├── 06_tech_bulls_grid.webp           # 科技类九宫格
 │   ├── bulls/xiaban.png                  # 清理跨格残像后的下班牛切图
 │   └── mybull-qrcode.png                 # 正式域名二维码
-├── scripts/
-│   └── serve.py                          # 本地静态服务
-└── overview.md                            # 项目实现概览
+└── scripts/
+    └── serve.py                          # 本地静态服务
 ```
 
 ## 本地运行
 
-项目是纯静态站点，可直接打开 `index.html`。为了保持图片导出、分享链接和统计脚本行为与线上环境一致，建议通过 HTTP 服务预览。
+项目是纯静态站点，可直接打开 `index.html`。为了保持图片导出和分享链接行为与线上环境一致，建议通过 HTTP 服务预览。
 
 ```bash
 python3 -m http.server 8088
@@ -91,15 +90,6 @@ python3 scripts/serve.py
 - 最近 30 天的牛历记录。
 
 清空浏览器站点数据后，设备 ID 和当日结果会重新生成。
-
-## 统计
-
-`index.html` 当前加载两个统计脚本：
-
-- 百度统计：`hm.baidu.com`
-- 扩展统计：`file.vaefamily.cn`
-
-如果项目需要符合特定地区的隐私或 Cookie 合规要求，上线前请根据实际投放地区补充相应的告知与同意机制。
 
 ## 部署
 
